@@ -1564,7 +1564,7 @@ class ExecutionContextDestroyed:
     def from_json(cls, json: T_JSON_DICT) -> ExecutionContextDestroyed:
         return cls(
             execution_context_id=ExecutionContextId.from_json(json['executionContextId']),
-            execution_context_unique_id=str(json['executionContextUniqueId'])
+            execution_context_unique_id=str(json['executionContextUniqueId']) if 'executionContextUniqueId' in json else ''
         )
 
 
